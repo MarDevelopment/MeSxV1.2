@@ -38,7 +38,7 @@ AddEventHandler('esx_holdup:robberyStarted', function(currentStore)
 		local store = Stores[currentStore]
 
 		if (os.time() - store.lastRobbed) < Config.TimerBeforeNewRob and store.lastRobbed ~= 0 then
-		TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U('recently_robbed', Config.TimerBeforeNewRob - (os.time() - store.lastRobbed) })
+		TriggerClientEvent('mythic_notify:client:SendAlert', _source, { type = 'inform', text = _U('recently_robbed', Config.TimerBeforeNewRob - (os.time() - store.lastRobbed)) })
 			--TriggerClientEvent('esx:showNotification', _source, _U('recently_robbed', Config.TimerBeforeNewRob - (os.time() - store.lastRobbed)))
 			return
 		end
