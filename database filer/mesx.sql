@@ -65,7 +65,17 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(4, 'society_mechanic', 300, NULL),
 	(5, 'society_police', 0, NULL),
 	(6, 'society_realestateagent', 0, NULL),
-	(7, 'society_taxi', 0, NULL);
+	(7, 'society_taxi', 0, NULL),
+	(11, 'society_police_black_money', 0, NULL),
+	(12, 'society_police_money', 0, NULL),
+	(13, 'locker', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(14, 'locker_cash', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(15, 'caution', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(16, 'bank_savings', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(17, 'property_black_money', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(18, 'locker_black', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(19, 'bag_money', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b'),
+	(20, 'bag_black_money', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
 -- Dumping structure for tabel mesx.addon_inventory
@@ -179,7 +189,14 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_ambulance', NULL, '{}'),
 	(2, 'society_mechanic', NULL, '{}'),
 	(3, 'society_police', NULL, '{}'),
-	(4, 'society_taxi', NULL, '{}');
+	(4, 'society_taxi', NULL, '{}'),
+	(10, 'bag', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(11, 'property', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(12, 'locker', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(13, 'user_helmet', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(14, 'user_glasses', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(15, 'user_mask', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}'),
+	(16, 'user_ears', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
 -- Dumping structure for tabel mesx.fine_types
@@ -304,6 +321,7 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('packaged_plank', 'Pakket træ', 1, 0, 1),
 	('petrol', 'Olie', 1, 0, 1),
 	('petrol_raffin', 'Bearbejdet olie', 1, 0, 1),
+	('radio', 'Radio', 1, 0, 1),
 	('scope', 'Scope', 2, 0, 1),
 	('skin', 'Stock weapon spray', 2, 0, 1),
 	('skin1', 'Dark green weapon spray', 2, 0, 1),
@@ -754,6 +772,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dumping data for table mesx.users: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `status`, `skin`, `is_dead`, `last_property`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `phone_number`, `jail_time`, `jail_loc`, `leo_rank`, `ems_rank`, `tow_rank`) VALUES
+	('license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{"bank":50020,"money":0,"black_money":0}', 'user', '[]', 'ambulance', 0, '[]', '{"z":30.7,"heading":0.0,"x":195.5,"y":-933.4}', '[{"val":997300,"name":"hunger","percent":99.72999999999999},{"val":997975,"name":"thirst","percent":99.7975},{"val":0,"name":"drunk","percent":0.0}]', '{"mask_1":0,"bproof_2":0,"chest_2":0,"helmet_2":0,"hair_color_2":0,"eyebrows_3":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"hair_color_1":0,"glasses_1":0,"sun_1":0,"torso_1":0,"face":0,"skin":0,"helmet_1":-1,"arms_2":0,"blush_3":0,"eye_color":0,"blush_1":0,"watches_1":-1,"bodyb_1":0,"complexion_1":0,"ears_2":0,"chest_1":0,"tshirt_2":0,"torso_2":0,"eyebrows_1":0,"sex":0,"beard_3":0,"ears_1":-1,"bags_2":0,"beard_1":0,"makeup_3":0,"chain_2":0,"hair_1":0,"watches_2":0,"lipstick_3":0,"makeup_4":0,"shoes_2":0,"lipstick_2":0,"age_2":0,"arms":0,"hair_2":0,"makeup_1":0,"beard_2":0,"sun_2":0,"decals_2":0,"complexion_2":0,"moles_2":0,"eyebrows_4":0,"glasses_2":0,"chest_3":0,"bracelets_1":-1,"pants_1":0,"pants_2":0,"blemishes_2":0,"bags_1":0,"moles_1":0,"tshirt_1":0,"chain_1":0,"makeup_2":0,"decals_1":0,"lipstick_4":0,"eyebrows_2":0,"age_1":0,"bracelets_2":0,"mask_2":0,"blemishes_1":0,"lipstick_1":0,"bodyb_2":0,"beard_4":0}', 0, NULL, 'Soren', 'Marquardt', '1991-12-01', 'm', 188, '055269775', 0, NULL, -1, -1, -1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for tabel mesx.user_lastcharacter
@@ -764,6 +784,8 @@ CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
 
 -- Dumping data for table mesx.user_lastcharacter: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `user_lastcharacter` DISABLE KEYS */;
+INSERT INTO `user_lastcharacter` (`license`, `charid`) VALUES
+	('license:8ad838b0be512425569bb29d38cb58c7984ec72b', 1);
 /*!40000 ALTER TABLE `user_lastcharacter` ENABLE KEYS */;
 
 -- Dumping structure for tabel mesx.user_licenses
@@ -1203,7 +1225,7 @@ CREATE TABLE IF NOT EXISTS `vs_divisions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_divisions: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesx.vs_divisions: ~1 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_divisions` DISABLE KEYS */;
 INSERT INTO `vs_divisions` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(1, 'Maverick', 'polmav', 1000, 'aviation');
