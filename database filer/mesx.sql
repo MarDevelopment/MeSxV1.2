@@ -14,8 +14,8 @@
 
 
 -- Dumping database structure for mesx
-CREATE DATABASE IF NOT EXISTS `mesx` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `mesx`;
+CREATE DATABASE IF NOT EXISTS `mesxv2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `mesxv2`;
 
 -- Dumping structure for tabel mesx.addon_account
 CREATE TABLE IF NOT EXISTS `addon_account` (
