@@ -5,7 +5,7 @@ Config.UseESX = true
 
 -- What should the price of jerry cans be?
 Config.JerryCanCost = 100
-Config.RefillCost = 50 -- If it is missing half of it capacity, this amount will be divided in half, and so on.
+Config.RefillCost = 500 -- If it is missing half of it capacity, this amount will be divided in half, and so on.
 
 -- Fuel decor - No need to change this, just leave it.
 Config.FuelDecor = "_FUEL_LEVEL"
@@ -14,34 +14,34 @@ Config.FuelDecor = "_FUEL_LEVEL"
 Config.DisableKeys = {0, 22, 23, 24, 29, 30, 31, 37, 44, 56, 82, 140, 166, 167, 168, 170, 288, 289, 311, 323}
 
 -- Want to use the HUD? Turn this to true.
-Config.EnableHUD = true
+Config.EnableHUD = false
 
 -- Configure blips here. Turn both to false to disable blips all together.
 Config.ShowNearestGasStationOnly = true
 Config.ShowAllGasStations = false
 
 -- Modify the fuel-cost here, using a multiplier value. Setting the value to 2.0 would cause a doubled increase.
-Config.CostMultiplier = 1.0
+Config.CostMultiplier = 1.5
 
 -- Configure the strings as you wish here.
 Config.Strings = {
-	ExitVehicle = "Exit the vehicle to refuel",
-	EToRefuel = "Press ~g~E ~w~to refuel vehicle",
-	JerryCanEmpty = "Jerry can is empty",
-	FullTank = "Tank is full",
-	PurchaseJerryCan = "Press ~g~E ~w~to purchase a jerry can for ~g~$" .. Config.JerryCanCost,
-	CancelFuelingPump = "Press ~g~E ~w~to cancel the fueling",
-	CancelFuelingJerryCan = "Press ~g~E ~w~to cancel the fueling",
-	NotEnoughCash = "Not enough cash",
-	RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can for ",
-	NotEnoughCashJerryCan = "Not enough cash to refill jerry can",
-	JerryCanFull = "Jerry can is full",
-	TotalCost = "Cost",
+	ExitVehicle = "Stig ud af bilen for at tanke",
+	EToRefuel = "Brug ~g~E ~w~for at tanke",
+	JerryCanEmpty = "Benzin dunken er tom",
+	FullTank = "Tanken er fuld",
+	PurchaseJerryCan = "Brug ~g~E ~w~for at købe benzin dunk ~g~" .. Config.JerryCanCost,
+	CancelFuelingPump = "Brug ~g~E ~w~for at stoppe med at tanke",
+	CancelFuelingJerryCan = "Brug ~g~E ~w~for at stoppe",
+	NotEnoughCash = "Ikke nok penge",
+	RefillJerryCan = "Brug ~g~E ~w~ for at fylde dunk ",
+	NotEnoughCashJerryCan = "Ikke penge nok til at tanke",
+	JerryCanFull = "Benzin dunken er fuld",
+	TotalCost = "pris",
 }
 
 if not Config.UseESX then
-	Config.Strings.PurchaseJerryCan = "Press ~g~E ~w~to grab a jerry can"
-	Config.Strings.RefillJerryCan = "Press ~g~E ~w~ to refill the jerry can"
+	Config.Strings.PurchaseJerryCan = "Brug ~g~E ~w~for at tage en dunk"
+	Config.Strings.RefillJerryCan = "Brug ~g~E ~w~ for at fylde dunk"
 end
 
 Config.PumpModels = {
@@ -91,14 +91,14 @@ Config.Classes = {
 
 -- The left part is at percentage RPM, and the right is how much fuel (divided by 10) you want to remove from the tank every second
 Config.FuelUsage = {
-	[1.0] = 1.4,
-	[0.9] = 1.2,
-	[0.8] = 1.0,
-	[0.7] = 0.9,
-	[0.6] = 0.8,
-	[0.5] = 0.7,
-	[0.4] = 0.5,
-	[0.3] = 0.4,
+	[1.0] = 1.0,
+	[0.9] = 0.9,
+	[0.8] = 0.8,
+	[0.7] = 0.7,
+	[0.6] = 0.6,
+	[0.5] = 0.5,
+	[0.4] = 0.4,
+	[0.3] = 0.3,
 	[0.2] = 0.2,
 	[0.1] = 0.1,
 	[0.0] = 0.0,
