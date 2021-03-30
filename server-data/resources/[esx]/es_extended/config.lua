@@ -7,7 +7,8 @@ Config.Accounts = {
 	money = _U('account_money')
 }
 
-Config.StartingAccountMoney = {bank = 50000}
+Config.StartingAccountMoney = {bank = 50000}  --start i bank
+Config.StartingAccountMoney = {money = 50000} --start med kontanter
 
 Config.MultiCharacter       = true -- enable kashacters compatibilty?
 Config.EnableSocietyPayouts = false -- pay from the society account that the player is employed at? Requirement: esx_society

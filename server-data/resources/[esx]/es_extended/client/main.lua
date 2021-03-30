@@ -461,7 +461,7 @@ RegisterCommand('-inventory', function()
 
 end)
 
-RegisterKeyMapping('+inventory', 'Open Inventory', 'keyboard', 'f2')
+--RegisterKeyMapping('+inventory', 'Open Inventory', 'keyboard', 'f2')
 
 -- Pickups
 Citizen.CreateThread(function()
