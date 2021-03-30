@@ -1,0 +1,71 @@
+Locales['da'] = {
+	['you_are_on_location'] = 'Du er på <strong>%s</strong>',
+
+	['date_format'] = {
+		default = 'Idag er det <strong>%s af %s, %s</strong>',
+		simple = 'Idag er det <strong>%s, %s</strong>',
+		simpleWithHours = 'Det er <strong>%s</strong>, <strong>%s, %s</strong>',
+		withWeekday = 'Idag er det <strong>%s, %s af %s, %s</strong>',
+		withHours = 'Det er <strong>%s</strong>, <strong>%s af %s, %s</strong>',
+		withWeekdayAndHours = 'Det er <strong>%s</strong>, <strong>%s, %s af %s, %s</strong>'
+	},
+
+	['weekDay_0'] = 'Søndag',
+	['weekDay_1'] = 'Mandag',
+	['weekDay_2'] = 'Tirsdag',
+	['weekDay_3'] = 'Onsdag',
+	['weekDay_4'] = 'Thorsdag',
+	['weekDay_5'] = 'Fredag',
+	['weekDay_6'] = 'Lørdag',
+
+	['day_1'] = '1st',
+	['day_2'] = '2rd',
+	['day_3'] = '3rd',
+	['day_4'] = '4th',
+	['day_5'] = '5th',
+	['day_6'] = '6th',
+	['day_7'] = '7th',
+	['day_8'] = '8th',
+	['day_9'] = '9th',
+
+	['day_10'] = '10th',
+	['day_11'] = '11th',
+	['day_12'] = '12th',
+	['day_13'] = '13th',
+	['day_14'] = '14th',
+	['day_15'] = '15th',
+	['day_16'] = '16th',
+	['day_17'] = '17th',
+	['day_18'] = '18th',
+	['day_19'] = '19th',
+
+	['day_20'] = '20th',
+	['day_21'] = '21th',
+	['day_22'] = '22th',
+	['day_23'] = '23th',
+	['day_24'] = '24th',
+	['day_25'] = '25th',
+	['day_26'] = '26th',
+	['day_27'] = '27th',
+	['day_28'] = '28th',
+	['day_29'] = '29th',
+
+	['day_30'] = '30th',
+	['day_31'] = '31th',
+
+	['month_0'] = 'Januar',
+	['month_1'] = 'Feburar',
+	['month_2'] = 'Marts',
+	['month_3'] = 'April',
+	['month_4'] = 'Maj',
+	['month_5'] = 'Juni',
+	['month_6'] = 'July',
+	['month_7'] = 'August',
+	['month_8'] = 'September',
+	['month_9'] = 'October',
+	['month_10'] = 'November',
+	['month_11'] = 'December',
+
+	['toggleui'] = 'Enables/Disables parts of the HUD',
+
+}
