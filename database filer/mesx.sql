@@ -13,11 +13,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for mesx
+-- Dumping database structure for mesxv2
 CREATE DATABASE IF NOT EXISTS `mesxv2` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `mesxv2`;
 
--- Dumping structure for tabel mesx.addon_account
+-- Dumping structure for tabel mesxv2.addon_account
 CREATE TABLE IF NOT EXISTS `addon_account` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.addon_account: ~16 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.addon_account: ~16 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `addon_account` DISABLE KEYS */;
 INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('bag_black_money', 'Bag Black Money ', 0),
@@ -46,7 +46,7 @@ INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('society_taxi', 'Taxa', 1);
 /*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.addon_account_data
+-- Dumping structure for tabel mesxv2.addon_account_data
 CREATE TABLE IF NOT EXISTS `addon_account_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_name` varchar(255) DEFAULT NULL,
@@ -55,9 +55,9 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.addon_account_data: ~6 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.addon_account_data: ~16 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
 INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(2, 'society_ambulance', 0, NULL),
@@ -78,7 +78,7 @@ INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(20, 'bag_black_money', 0, 'license:8ad838b0be512425569bb29d38cb58c7984ec72b');
 /*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.addon_inventory
+-- Dumping structure for tabel mesxv2.addon_inventory
 CREATE TABLE IF NOT EXISTS `addon_inventory` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.addon_inventory: ~7 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.addon_inventory: ~7 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
 INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('bag', 'Bag Inventory', 0),
@@ -98,7 +98,7 @@ INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('society_taxi', 'Taxa', 1);
 /*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.addon_inventory_items
+-- Dumping structure for tabel mesxv2.addon_inventory_items
 CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `inventory_name` varchar(100) NOT NULL,
@@ -111,11 +111,11 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
   KEY `index_addon_inventory_inventory_name` (`inventory_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.addon_inventory_items: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.addon_inventory_items: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `addon_inventory_items` DISABLE KEYS */;
 /*!40000 ALTER TABLE `addon_inventory_items` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.ammunition
+-- Dumping structure for tabel mesxv2.ammunition
 CREATE TABLE IF NOT EXISTS `ammunition` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `owner` text DEFAULT NULL,
@@ -128,11 +128,11 @@ CREATE TABLE IF NOT EXISTS `ammunition` (
   UNIQUE KEY `weapon_id` (`weapon_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.ammunition: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.ammunition: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `ammunition` DISABLE KEYS */;
 /*!40000 ALTER TABLE `ammunition` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.billing
+-- Dumping structure for tabel mesxv2.billing
 CREATE TABLE IF NOT EXISTS `billing` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
@@ -144,11 +144,11 @@ CREATE TABLE IF NOT EXISTS `billing` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.billing: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.billing: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `billing` DISABLE KEYS */;
 /*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.datastore
+-- Dumping structure for tabel mesxv2.datastore
 CREATE TABLE IF NOT EXISTS `datastore` (
   `name` varchar(60) NOT NULL,
   `label` varchar(100) NOT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `datastore` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.datastore: ~11 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.datastore: ~11 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
 INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('bag', 'Bag Datastore', 0),
@@ -172,7 +172,7 @@ INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('user_mask', 'Maske', 0);
 /*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.datastore_data
+-- Dumping structure for tabel mesxv2.datastore_data
 CREATE TABLE IF NOT EXISTS `datastore_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -181,9 +181,9 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.datastore_data: ~4 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.datastore_data: ~11 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
 INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_ambulance', NULL, '{}'),
@@ -199,7 +199,7 @@ INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(16, 'user_ears', 'license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{}');
 /*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.fine_types
+-- Dumping structure for tabel mesxv2.fine_types
 CREATE TABLE IF NOT EXISTS `fine_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `label` varchar(255) DEFAULT NULL,
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `fine_types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.fine_types: ~4 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.fine_types: ~4 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `fine_types` DISABLE KEYS */;
 INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(1, 'Test', 30, 0),
@@ -217,7 +217,7 @@ INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(4, 'Test 4', 250, 3);
 /*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.inventory_glovebox
+-- Dumping structure for tabel mesxv2.inventory_glovebox
 CREATE TABLE IF NOT EXISTS `inventory_glovebox` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `plate` varchar(8) NOT NULL,
@@ -227,32 +227,32 @@ CREATE TABLE IF NOT EXISTS `inventory_glovebox` (
   UNIQUE KEY `plate` (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.inventory_glovebox: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.inventory_glovebox: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `inventory_glovebox` DISABLE KEYS */;
 /*!40000 ALTER TABLE `inventory_glovebox` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.inventory_hotbar
+-- Dumping structure for tabel mesxv2.inventory_hotbar
 CREATE TABLE IF NOT EXISTS `inventory_hotbar` (
   `owner` text NOT NULL,
   `item` text NOT NULL,
   `slot` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.inventory_hotbar: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.inventory_hotbar: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `inventory_hotbar` DISABLE KEYS */;
 /*!40000 ALTER TABLE `inventory_hotbar` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.inventory_lockers
+-- Dumping structure for tabel mesxv2.inventory_lockers
 CREATE TABLE IF NOT EXISTS `inventory_lockers` (
   `owner` varchar(50) NOT NULL,
   `lockerName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.inventory_lockers: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.inventory_lockers: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `inventory_lockers` DISABLE KEYS */;
 /*!40000 ALTER TABLE `inventory_lockers` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.inventory_trunk
+-- Dumping structure for tabel mesxv2.inventory_trunk
 CREATE TABLE IF NOT EXISTS `inventory_trunk` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `plate` varchar(8) NOT NULL,
@@ -262,11 +262,11 @@ CREATE TABLE IF NOT EXISTS `inventory_trunk` (
   UNIQUE KEY `plate` (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.inventory_trunk: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.inventory_trunk: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `inventory_trunk` DISABLE KEYS */;
 /*!40000 ALTER TABLE `inventory_trunk` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.items
+-- Dumping structure for tabel mesxv2.items
 CREATE TABLE IF NOT EXISTS `items` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) NOT NULL,
@@ -276,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.items: ~73 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.items: ~74 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `items` DISABLE KEYS */;
 INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('alive_chicken', 'Levende kylling', 1, 0, 1),
@@ -355,7 +355,7 @@ INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('wool', 'Uld', 1, 0, 1);
 /*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.jobs
+-- Dumping structure for tabel mesxv2.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
   `name` varchar(50) NOT NULL,
   `label` varchar(50) DEFAULT NULL,
@@ -363,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.jobs: ~14 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.jobs: ~14 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
 INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('ambulance', 'Ambulance', 0),
@@ -382,7 +382,7 @@ INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('unemployed', 'Arbejdsløs', 0);
 /*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.job_grades
+-- Dumping structure for tabel mesxv2.job_grades
 CREATE TABLE IF NOT EXISTS `job_grades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `job_name` varchar(50) DEFAULT NULL,
@@ -395,7 +395,7 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.job_grades: ~36 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.job_grades: ~36 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
 INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'unemployed', 0, 'unemployed', 'Konthjælp', 200, '{}', '{}'),
@@ -436,14 +436,14 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(40, 'taxi', 4, 'boss', 'Ejer', 0, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}');
 /*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.licenses
+-- Dumping structure for tabel mesxv2.licenses
 CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.licenses: ~8 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.licenses: ~8 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `licenses` DISABLE KEYS */;
 INSERT INTO `licenses` (`type`, `label`) VALUES
 	('aircraft', 'Pilot certifikat'),
@@ -456,7 +456,7 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('weed_processing', 'Weed Licens');
 /*!40000 ALTER TABLE `licenses` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.owned_properties
+-- Dumping structure for tabel mesxv2.owned_properties
 CREATE TABLE IF NOT EXISTS `owned_properties` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -466,11 +466,11 @@ CREATE TABLE IF NOT EXISTS `owned_properties` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.owned_properties: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.owned_properties: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `owned_properties` DISABLE KEYS */;
 /*!40000 ALTER TABLE `owned_properties` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.owned_vehicles
+-- Dumping structure for tabel mesxv2.owned_vehicles
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `owner` varchar(40) NOT NULL,
   `plate` varchar(12) NOT NULL,
@@ -481,11 +481,11 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.owned_vehicles: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.owned_vehicles: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
 /*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.phone_app_chat
+-- Dumping structure for tabel mesxv2.phone_app_chat
 CREATE TABLE IF NOT EXISTS `phone_app_chat` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `channel` varchar(20) NOT NULL,
@@ -494,11 +494,11 @@ CREATE TABLE IF NOT EXISTS `phone_app_chat` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mesx.phone_app_chat: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.phone_app_chat: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `phone_app_chat` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_app_chat` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.phone_calls
+-- Dumping structure for tabel mesxv2.phone_calls
 CREATE TABLE IF NOT EXISTS `phone_calls` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `owner` varchar(255) NOT NULL COMMENT 'Num tel proprio',
@@ -509,11 +509,11 @@ CREATE TABLE IF NOT EXISTS `phone_calls` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mesx.phone_calls: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.phone_calls: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `phone_calls` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_calls` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.phone_messages
+-- Dumping structure for tabel mesxv2.phone_messages
 CREATE TABLE IF NOT EXISTS `phone_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `transmitter` varchar(10) NOT NULL,
@@ -525,11 +525,11 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mesx.phone_messages: 0 rows
+-- Dumping data for table mesxv2.phone_messages: 0 rows
 /*!40000 ALTER TABLE `phone_messages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_messages` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.phone_users_contacts
+-- Dumping structure for tabel mesxv2.phone_users_contacts
 CREATE TABLE IF NOT EXISTS `phone_users_contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
@@ -538,11 +538,11 @@ CREATE TABLE IF NOT EXISTS `phone_users_contacts` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Dumping data for table mesx.phone_users_contacts: 0 rows
+-- Dumping data for table mesxv2.phone_users_contacts: 0 rows
 /*!40000 ALTER TABLE `phone_users_contacts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `phone_users_contacts` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.properties
+-- Dumping structure for tabel mesxv2.properties
 CREATE TABLE IF NOT EXISTS `properties` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -561,7 +561,7 @@ CREATE TABLE IF NOT EXISTS `properties` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.properties: ~82 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.properties: ~82 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `properties` DISABLE KEYS */;
 INSERT INTO `properties` (`id`, `name`, `label`, `entering`, `exit`, `inside`, `outside`, `ipls`, `gateway`, `is_single`, `is_room`, `is_gateway`, `room_menu`, `price`) VALUES
 	(1, 'WhispymoundDrive', '2677 Whispymound Drive', '{"y":564.89,"z":182.959,"x":119.384}', '{"x":117.347,"y":559.506,"z":183.304}', '{"y":557.032,"z":183.301,"x":118.037}', '{"y":567.798,"z":182.131,"x":119.249}', '[]', NULL, 1, 1, 0, '{"x":118.748,"y":566.573,"z":175.697}', 1500000),
@@ -648,7 +648,7 @@ INSERT INTO `properties` (`id`, `name`, `label`, `entering`, `exit`, `inside`, `
 	(109, 'MedEndApartment10', 'Medium Apartment 10', '{"y":6340.1,"z":28.84,"x":-367.33}', '{"y":-1012.27,"z":-100.2,"x":346.49}', '{"y":-1000.09,"z":-100.2,"x":347.06}', '{"y":6336.97,"z":28.84,"x":-371.3}', '[]', NULL, 1, 1, 0, '{"x":345.3,"y":-995.24,"z":-100.2}', 500000);
 /*!40000 ALTER TABLE `properties` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.shops
+-- Dumping structure for tabel mesxv2.shops
 CREATE TABLE IF NOT EXISTS `shops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `store` varchar(100) NOT NULL,
@@ -657,7 +657,7 @@ CREATE TABLE IF NOT EXISTS `shops` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.shops: ~9 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.shops: ~9 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `shops` DISABLE KEYS */;
 INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 	(1, 'TwentyFourSeven', 'bread', 30),
@@ -671,7 +671,7 @@ INSERT INTO `shops` (`id`, `store`, `item`, `price`) VALUES
 	(9, 'LTDgasoline', 'beer', 45);
 /*!40000 ALTER TABLE `shops` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.society_moneywash
+-- Dumping structure for tabel mesxv2.society_moneywash
 CREATE TABLE IF NOT EXISTS `society_moneywash` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) NOT NULL,
@@ -680,11 +680,11 @@ CREATE TABLE IF NOT EXISTS `society_moneywash` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.society_moneywash: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.society_moneywash: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `society_moneywash` DISABLE KEYS */;
 /*!40000 ALTER TABLE `society_moneywash` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.trunk_inventory
+-- Dumping structure for tabel mesxv2.trunk_inventory
 CREATE TABLE IF NOT EXISTS `trunk_inventory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `plate` varchar(8) NOT NULL,
@@ -694,11 +694,11 @@ CREATE TABLE IF NOT EXISTS `trunk_inventory` (
   UNIQUE KEY `plate` (`plate`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.trunk_inventory: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.trunk_inventory: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `trunk_inventory` DISABLE KEYS */;
 /*!40000 ALTER TABLE `trunk_inventory` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.twitter_accounts
+-- Dumping structure for tabel mesxv2.twitter_accounts
 CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT '0',
@@ -708,11 +708,11 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
   UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table mesx.twitter_accounts: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.twitter_accounts: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `twitter_accounts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `twitter_accounts` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.twitter_likes
+-- Dumping structure for tabel mesxv2.twitter_likes
 CREATE TABLE IF NOT EXISTS `twitter_likes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `authorId` int(11) DEFAULT NULL,
@@ -724,11 +724,11 @@ CREATE TABLE IF NOT EXISTS `twitter_likes` (
   CONSTRAINT `FK_twitter_likes_twitter_tweets` FOREIGN KEY (`tweetId`) REFERENCES `twitter_tweets` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Dumping data for table mesx.twitter_likes: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.twitter_likes: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `twitter_likes` DISABLE KEYS */;
 /*!40000 ALTER TABLE `twitter_likes` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.twitter_tweets
+-- Dumping structure for tabel mesxv2.twitter_tweets
 CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `authorId` int(11) NOT NULL,
@@ -741,11 +741,11 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
   CONSTRAINT `FK_twitter_tweets_twitter_accounts` FOREIGN KEY (`authorId`) REFERENCES `twitter_accounts` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table mesx.twitter_tweets: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.twitter_tweets: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `twitter_tweets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `twitter_tweets` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.users
+-- Dumping structure for tabel mesxv2.users
 CREATE TABLE IF NOT EXISTS `users` (
   `identifier` varchar(255) NOT NULL,
   `accounts` longtext DEFAULT NULL,
@@ -770,19 +770,23 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping structure for tabel mesx.user_lastcharacter
+-- Dumping data for table mesxv2.users: ~0 rows (tilnærmelsesvis)
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+
+-- Dumping structure for tabel mesxv2.user_lastcharacter
 CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
   `license` varchar(255) NOT NULL,
   `charid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table mesx.user_lastcharacter: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.user_lastcharacter: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `user_lastcharacter` DISABLE KEYS */;
 INSERT INTO `user_lastcharacter` (`license`, `charid`) VALUES
 	('license:8ad838b0be512425569bb29d38cb58c7984ec72b', 1);
 /*!40000 ALTER TABLE `user_lastcharacter` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.user_licenses
+-- Dumping structure for tabel mesxv2.user_licenses
 CREATE TABLE IF NOT EXISTS `user_licenses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(255) NOT NULL,
@@ -790,11 +794,11 @@ CREATE TABLE IF NOT EXISTS `user_licenses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.user_licenses: ~0 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.user_licenses: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `user_licenses` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_licenses` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_aircrafts
+-- Dumping structure for tabel mesxv2.vs_aircrafts
 CREATE TABLE IF NOT EXISTS `vs_aircrafts` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -803,7 +807,7 @@ CREATE TABLE IF NOT EXISTS `vs_aircrafts` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_aircrafts: ~27 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_aircrafts: ~27 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_aircrafts` DISABLE KEYS */;
 INSERT INTO `vs_aircrafts` (`name`, `model`, `price`, `category`) VALUES
 	('Alpha Z1', 'alphaz1', 1121000, 'planes'),
@@ -835,21 +839,21 @@ INSERT INTO `vs_aircrafts` (`name`, `model`, `price`, `category`) VALUES
 	('Volatus', 'volatus', 1250000, 'helis');
 /*!40000 ALTER TABLE `vs_aircrafts` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_aircraft_categories
+-- Dumping structure for tabel mesxv2.vs_aircraft_categories
 CREATE TABLE IF NOT EXISTS `vs_aircraft_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_aircraft_categories: ~2 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_aircraft_categories: ~2 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_aircraft_categories` DISABLE KEYS */;
 INSERT INTO `vs_aircraft_categories` (`name`, `label`) VALUES
 	('helis', 'Helicopters'),
 	('planes', 'Planes');
 /*!40000 ALTER TABLE `vs_aircraft_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_ambulance
+-- Dumping structure for tabel mesxv2.vs_ambulance
 CREATE TABLE IF NOT EXISTS `vs_ambulance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -859,7 +863,7 @@ CREATE TABLE IF NOT EXISTS `vs_ambulance` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_ambulance: ~8 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_ambulance: ~8 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_ambulance` DISABLE KEYS */;
 INSERT INTO `vs_ambulance` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(1, 'Ambulance', 'ambulance', 500, 'ambulance'),
@@ -872,14 +876,14 @@ INSERT INTO `vs_ambulance` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(8, 'Fire Truck', 'firetruk', 750, 'boss');
 /*!40000 ALTER TABLE `vs_ambulance` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_ambulance_categories
+-- Dumping structure for tabel mesxv2.vs_ambulance_categories
 CREATE TABLE IF NOT EXISTS `vs_ambulance_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_ambulance_categories: ~4 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_ambulance_categories: ~4 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_ambulance_categories` DISABLE KEYS */;
 INSERT INTO `vs_ambulance_categories` (`name`, `label`) VALUES
 	('ambulance', 'Jr. EMT'),
@@ -888,7 +892,7 @@ INSERT INTO `vs_ambulance_categories` (`name`, `label`) VALUES
 	('doctor', 'EMT');
 /*!40000 ALTER TABLE `vs_ambulance_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_boats
+-- Dumping structure for tabel mesxv2.vs_boats
 CREATE TABLE IF NOT EXISTS `vs_boats` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -897,7 +901,7 @@ CREATE TABLE IF NOT EXISTS `vs_boats` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_boats: ~16 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_boats: ~16 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_boats` DISABLE KEYS */;
 INSERT INTO `vs_boats` (`name`, `model`, `price`, `category`) VALUES
 	('Dinghy 4Seat', 'dinghy', 25000, 'boats'),
@@ -918,21 +922,21 @@ INSERT INTO `vs_boats` (`name`, `model`, `price`, `category`) VALUES
 	('Tropic Yacht', 'tropic2', 27000, 'boats');
 /*!40000 ALTER TABLE `vs_boats` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_boat_categories
+-- Dumping structure for tabel mesxv2.vs_boat_categories
 CREATE TABLE IF NOT EXISTS `vs_boat_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_boat_categories: ~2 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_boat_categories: ~2 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_boat_categories` DISABLE KEYS */;
 INSERT INTO `vs_boat_categories` (`name`, `label`) VALUES
 	('boats', 'Boats'),
 	('subs', 'Submersibles');
 /*!40000 ALTER TABLE `vs_boat_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_cars
+-- Dumping structure for tabel mesxv2.vs_cars
 CREATE TABLE IF NOT EXISTS `vs_cars` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -941,7 +945,7 @@ CREATE TABLE IF NOT EXISTS `vs_cars` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_cars: ~240 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_cars: ~240 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_cars` DISABLE KEYS */;
 INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Adder', 'adder', 900000, 'supers'),
@@ -1186,14 +1190,14 @@ INSERT INTO `vs_cars` (`name`, `model`, `price`, `category`) VALUES
 	('Z-Type', 'ztype', 220000, 'sportsclassics');
 /*!40000 ALTER TABLE `vs_cars` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_car_categories
+-- Dumping structure for tabel mesxv2.vs_car_categories
 CREATE TABLE IF NOT EXISTS `vs_car_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_car_categories: ~11 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_car_categories: ~11 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_car_categories` DISABLE KEYS */;
 INSERT INTO `vs_car_categories` (`name`, `label`) VALUES
 	('compacts', 'Compacts'),
@@ -1209,7 +1213,7 @@ INSERT INTO `vs_car_categories` (`name`, `label`) VALUES
 	('vans', 'Vans');
 /*!40000 ALTER TABLE `vs_car_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_divisions
+-- Dumping structure for tabel mesxv2.vs_divisions
 CREATE TABLE IF NOT EXISTS `vs_divisions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -1219,26 +1223,26 @@ CREATE TABLE IF NOT EXISTS `vs_divisions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_divisions: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_divisions: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_divisions` DISABLE KEYS */;
 INSERT INTO `vs_divisions` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(1, 'Maverick', 'polmav', 1000, 'aviation');
 /*!40000 ALTER TABLE `vs_divisions` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_division_categories
+-- Dumping structure for tabel mesxv2.vs_division_categories
 CREATE TABLE IF NOT EXISTS `vs_division_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_division_categories: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_division_categories: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_division_categories` DISABLE KEYS */;
 INSERT INTO `vs_division_categories` (`name`, `label`) VALUES
 	('aviation', 'Aviation');
 /*!40000 ALTER TABLE `vs_division_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_mecano
+-- Dumping structure for tabel mesxv2.vs_mecano
 CREATE TABLE IF NOT EXISTS `vs_mecano` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -1248,7 +1252,7 @@ CREATE TABLE IF NOT EXISTS `vs_mecano` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_mecano: ~10 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_mecano: ~10 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_mecano` DISABLE KEYS */;
 INSERT INTO `vs_mecano` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(1, 'Flatbed', 'flatbed', 500, 'recrue'),
@@ -1263,14 +1267,14 @@ INSERT INTO `vs_mecano` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(10, 'Tow Truck', 'towtruck2', 750, 'boss');
 /*!40000 ALTER TABLE `vs_mecano` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_mecano_categories
+-- Dumping structure for tabel mesxv2.vs_mecano_categories
 CREATE TABLE IF NOT EXISTS `vs_mecano_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_mecano_categories: ~5 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_mecano_categories: ~5 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_mecano_categories` DISABLE KEYS */;
 INSERT INTO `vs_mecano_categories` (`name`, `label`) VALUES
 	('boss', 'Boss'),
@@ -1280,7 +1284,7 @@ INSERT INTO `vs_mecano_categories` (`name`, `label`) VALUES
 	('recrue', 'Recruit');
 /*!40000 ALTER TABLE `vs_mecano_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_police
+-- Dumping structure for tabel mesxv2.vs_police
 CREATE TABLE IF NOT EXISTS `vs_police` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(60) NOT NULL,
@@ -1290,7 +1294,7 @@ CREATE TABLE IF NOT EXISTS `vs_police` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_police: ~10 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_police: ~10 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_police` DISABLE KEYS */;
 INSERT INTO `vs_police` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(1, 'Police Cruiser', 'police', 500, 'recruit'),
@@ -1305,14 +1309,14 @@ INSERT INTO `vs_police` (`id`, `name`, `model`, `price`, `category`) VALUES
 	(10, 'Police Cruiser', 'police2', 750, 'boss');
 /*!40000 ALTER TABLE `vs_police` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_police_categories
+-- Dumping structure for tabel mesxv2.vs_police_categories
 CREATE TABLE IF NOT EXISTS `vs_police_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_police_categories: ~5 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_police_categories: ~5 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_police_categories` DISABLE KEYS */;
 INSERT INTO `vs_police_categories` (`name`, `label`) VALUES
 	('boss', 'Chief'),
@@ -1322,7 +1326,7 @@ INSERT INTO `vs_police_categories` (`name`, `label`) VALUES
 	('sergeant', 'Sergeant');
 /*!40000 ALTER TABLE `vs_police_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_trucks
+-- Dumping structure for tabel mesxv2.vs_trucks
 CREATE TABLE IF NOT EXISTS `vs_trucks` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -1331,7 +1335,7 @@ CREATE TABLE IF NOT EXISTS `vs_trucks` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_trucks: ~28 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_trucks: ~28 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_trucks` DISABLE KEYS */;
 INSERT INTO `vs_trucks` (`name`, `model`, `price`, `category`) VALUES
 	('Airport Bus', 'airbus', 50000, 'trans'),
@@ -1364,14 +1368,14 @@ INSERT INTO `vs_trucks` (`name`, `model`, `price`, `category`) VALUES
 	('Field Master', 'tractor2', 15000, 'other');
 /*!40000 ALTER TABLE `vs_trucks` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_truck_categories
+-- Dumping structure for tabel mesxv2.vs_truck_categories
 CREATE TABLE IF NOT EXISTS `vs_truck_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_truck_categories: ~4 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_truck_categories: ~4 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_truck_categories` DISABLE KEYS */;
 INSERT INTO `vs_truck_categories` (`name`, `label`) VALUES
 	('box', 'Boxed Trucks'),
@@ -1380,7 +1384,7 @@ INSERT INTO `vs_truck_categories` (`name`, `label`) VALUES
 	('trans', 'Transport Trucks');
 /*!40000 ALTER TABLE `vs_truck_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_vipboats
+-- Dumping structure for tabel mesxv2.vs_vipboats
 CREATE TABLE IF NOT EXISTS `vs_vipboats` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -1389,26 +1393,26 @@ CREATE TABLE IF NOT EXISTS `vs_vipboats` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_vipboats: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_vipboats: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_vipboats` DISABLE KEYS */;
 INSERT INTO `vs_vipboats` (`name`, `model`, `price`, `category`) VALUES
 	('Tropic Yacht', 'tropic2', 27000, 'boats');
 /*!40000 ALTER TABLE `vs_vipboats` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_vipboat_categories
+-- Dumping structure for tabel mesxv2.vs_vipboat_categories
 CREATE TABLE IF NOT EXISTS `vs_vipboat_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_vipboat_categories: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_vipboat_categories: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_vipboat_categories` DISABLE KEYS */;
 INSERT INTO `vs_vipboat_categories` (`name`, `label`) VALUES
 	('boats', 'Boats');
 /*!40000 ALTER TABLE `vs_vipboat_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_vips
+-- Dumping structure for tabel mesxv2.vs_vips
 CREATE TABLE IF NOT EXISTS `vs_vips` (
   `name` varchar(60) NOT NULL,
   `model` varchar(60) NOT NULL,
@@ -1417,26 +1421,26 @@ CREATE TABLE IF NOT EXISTS `vs_vips` (
   PRIMARY KEY (`model`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_vips: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_vips: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_vips` DISABLE KEYS */;
 INSERT INTO `vs_vips` (`name`, `model`, `price`, `category`) VALUES
 	('Shotaro', 'shotaro', 30000, 'motorcycles');
 /*!40000 ALTER TABLE `vs_vips` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.vs_vip_categories
+-- Dumping structure for tabel mesxv2.vs_vip_categories
 CREATE TABLE IF NOT EXISTS `vs_vip_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.vs_vip_categories: ~1 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.vs_vip_categories: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `vs_vip_categories` DISABLE KEYS */;
 INSERT INTO `vs_vip_categories` (`name`, `label`) VALUES
 	('motorcycles', 'Motos');
 /*!40000 ALTER TABLE `vs_vip_categories` ENABLE KEYS */;
 
--- Dumping structure for tabel mesx.weashops
+-- Dumping structure for tabel mesxv2.weashops
 CREATE TABLE IF NOT EXISTS `weashops` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `zone` varchar(255) NOT NULL,
@@ -1445,7 +1449,7 @@ CREATE TABLE IF NOT EXISTS `weashops` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.weashops: ~40 rows (tilnærmelsesvis)
+-- Dumping data for table mesxv2.weashops: ~0 rows (tilnærmelsesvis)
 /*!40000 ALTER TABLE `weashops` DISABLE KEYS */;
 INSERT INTO `weashops` (`id`, `zone`, `item`, `price`) VALUES
 	(1, 'GunShop', 'WEAPON_PISTOL', 300),
