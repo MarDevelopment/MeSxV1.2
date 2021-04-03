@@ -770,12 +770,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table mesx.users: ~0 rows (tilnærmelsesvis)
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `status`, `skin`, `is_dead`, `last_property`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `phone_number`, `jail_time`, `jail_loc`, `leo_rank`, `ems_rank`, `tow_rank`) VALUES
-	('license:8ad838b0be512425569bb29d38cb58c7984ec72b', '{"bank":50020,"money":0,"black_money":0}', 'user', '[]', 'ambulance', 0, '[]', '{"z":30.7,"heading":0.0,"x":195.5,"y":-933.4}', '[{"val":997300,"name":"hunger","percent":99.72999999999999},{"val":997975,"name":"thirst","percent":99.7975},{"val":0,"name":"drunk","percent":0.0}]', '{"mask_1":0,"bproof_2":0,"chest_2":0,"helmet_2":0,"hair_color_2":0,"eyebrows_3":0,"shoes_1":0,"bproof_1":0,"blush_2":0,"hair_color_1":0,"glasses_1":0,"sun_1":0,"torso_1":0,"face":0,"skin":0,"helmet_1":-1,"arms_2":0,"blush_3":0,"eye_color":0,"blush_1":0,"watches_1":-1,"bodyb_1":0,"complexion_1":0,"ears_2":0,"chest_1":0,"tshirt_2":0,"torso_2":0,"eyebrows_1":0,"sex":0,"beard_3":0,"ears_1":-1,"bags_2":0,"beard_1":0,"makeup_3":0,"chain_2":0,"hair_1":0,"watches_2":0,"lipstick_3":0,"makeup_4":0,"shoes_2":0,"lipstick_2":0,"age_2":0,"arms":0,"hair_2":0,"makeup_1":0,"beard_2":0,"sun_2":0,"decals_2":0,"complexion_2":0,"moles_2":0,"eyebrows_4":0,"glasses_2":0,"chest_3":0,"bracelets_1":-1,"pants_1":0,"pants_2":0,"blemishes_2":0,"bags_1":0,"moles_1":0,"tshirt_1":0,"chain_1":0,"makeup_2":0,"decals_1":0,"lipstick_4":0,"eyebrows_2":0,"age_1":0,"bracelets_2":0,"mask_2":0,"blemishes_1":0,"lipstick_1":0,"bodyb_2":0,"beard_4":0}', 0, NULL, 'Soren', 'Marquardt', '1991-12-01', 'm', 188, '055269775', 0, NULL, -1, -1, -1);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-
 -- Dumping structure for tabel mesx.user_lastcharacter
 CREATE TABLE IF NOT EXISTS `user_lastcharacter` (
   `license` varchar(255) NOT NULL,
