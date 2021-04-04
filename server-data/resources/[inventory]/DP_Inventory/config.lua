@@ -5,13 +5,13 @@ Config.ExcludeAccountsList = {'bank', 'money'} -- DO NOT TOUCH!
 
 Config.IncludeCash = true -- Include cash in inventory? true or false.
 Config.IncludeAccounts = true -- Include accounts (bank, black money, ...)? true or false.
-Config.CameraAnimationPocket = false -- Set camera focus towards player if in inventory.
+Config.CameraAnimationPocket = true -- Set camera focus towards player if in inventory.
 Config.CameraAnimationBag = false -- Set camera focus towards player if in inventory.
 Config.CameraAnimationTrunk = false -- Set camera focus towards player if in inventory.
 Config.CameraAnimationGlovebox = false -- Set camera focus towards player if in inventory.
 Config.EverybodyCanRob = true -- Rob a dead or mugging or handcuffed person or allow jobs only?
 Config.JobOnlyInventory = true -- Can jobs use /openinventory ID from anywere? If False only admins can do this.
-Config.AllowModerators = false -- Can moderators use /openinventory ID from anywere?
+Config.AllowModerators = true -- Can moderators use /openinventory ID from anywere?
 Config.CheckOwnership = false -- If true, Only owner of vehicle can store items in trunk and glovebox. Only if this is on TRUE Config.AllowJOBNAME will work.
 Config.AllowPolice = true -- If true, police will be able to search players' trunks.
 Config.AllowNightclub = true -- If true, nightclub will be able to search players' trunks.
@@ -37,7 +37,7 @@ Config.CloseUiItems = {
 'flashlight', 'grip', 'lockpick', 'medikit', 'oxygenmask', 'phone', 'repairkit',
 'scope', 'sim_card', 'skin', 'skin1', 'skin2', 'skin3', 'skin4', 'skin5', 'skin6',
 'skin7', 'suppressor', 'tirekit', 'vehgps', 'water'     
-} -- List of item names that will close ui when used.
+} -- Liste med ting der skal lukke inventory når brugt.
 
 Config.OpenControl = 289 -- F2. player inventory, it is recommend to use the same as CloseControl.
 Config.CloseControl = 289 -- F2. player inventory, it is recommend to use the same as OpenControl.
@@ -49,10 +49,10 @@ Config.OpenKeyTrunk = 170 -- F3. trunk inventory (behind-car), it is recommend t
 Config.RobKeyOne = 38 -- E
 Config.RobKeyTwo = 60 -- CTRL
 
-Config.ReloadTime = 2000 -- in miliseconds for reloading your ammunition.
+Config.ReloadTime = 2000 -- hvor længe det skal tage at lade
 
-Config.InitialLockerRentPrice = 450
-Config.DailyLockerRentPrice = 250
+Config.InitialLockerRentPrice = 450 -- pris på leje af skab
+Config.DailyLockerRentPrice = 250 -- pris om dagen
 Config.LockerExterior = vector3(-286.23, 280.84, 89.89)
 Config.LockerInterior = vector3(1173.24, -3196.62, -39.01)
 
@@ -227,7 +227,7 @@ Config.Shops = {
 			{x = 25.723,   y = -1346.966, z = 28.497}
 		},
 		Items = {
-			{name = 'bag', price = 6},
+			{name = 'ammunition_fireextinguisher', price = 6},
 			{name = 'bandage', price = 6},
 			{name = 'beer', price = 6},
 			{name = 'binoculars', price = 7},
@@ -247,7 +247,9 @@ Config.Shops = {
 			{name = 'repairkit', price = 90},
 			{name = 'tirekit', price = 100},
 			{name = 'vehgps', price = 65},
-			{name = 'water', price = 15}
+			{name = 'water', price = 15},
+			{name = 'WEAPON_FLASHLIGHT', price = 15},
+			{name = 'phone', price = 15}
 		}
 	},
 
